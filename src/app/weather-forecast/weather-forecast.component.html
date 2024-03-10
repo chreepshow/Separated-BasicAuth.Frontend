@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let weatherForecast of weatherForecasts">
-      <td>{{ weatherForecast.date | date : "short" }}</td>
+      <td>{{ weatherForecast.date | date: 'short' }}</td>
       <td>{{ weatherForecast.temperatureC }}</td>
       <td>{{ weatherForecast.temperatureF }}</td>
       <td>{{ weatherForecast.summary }}</td>

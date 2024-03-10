@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [RouterOutlet, WeatherForecastComponent],
   providers: [HttpClientModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'BasicAuth.Frontend';

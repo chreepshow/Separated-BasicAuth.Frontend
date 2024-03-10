@@ -6,14 +6,16 @@ import { WeatherForecast } from '@app/models/weather-forecast/weather-forecast';
 import { environment } from '@env/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WeatherForecastService {
   readonly path = 'WeatherForecast';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  public getWeatherForecasts(): Observable<WeatherForecast[]> { 
-    return this.http.get<WeatherForecast[]>(`${environment.apiUrl}/${this.path}`);
+  public getWeatherForecasts(): Observable<WeatherForecast[]> {
+    return this.http.get<WeatherForecast[]>(
+      `${environment.apiUrl}/${this.path}`,
+    );
   }
 }
