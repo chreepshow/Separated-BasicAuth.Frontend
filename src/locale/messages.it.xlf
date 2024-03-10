@@ -2,9 +2,44 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="MENU_ITEM_TITLE__ABOUT" datatype="html">
+        <source>Weather</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shell/header/menu-items.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="MENU_ITEM_ALT__ABOUT" datatype="html">
+        <source>Weather</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shell/header/menu-items.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SHELL__TITLE" datatype="html">
+        <source>Home page</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shell/shell.routes.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="WEATHER__TITLE" datatype="html">
+        <source>Weather page</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shell/shell.routes.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SHELL__HEADER" datatype="html">
+        <source> Hello world!
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shell/shell/shell.component.html</context>
+          <context context-type="linenumber">3,6</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="9024931303085320240" datatype="html">
         <source>summary</source>
-        <target>riepilogo</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/weather-forecast/weather-forecast.component.html</context>
           <context context-type="linenumber">7,8</context>

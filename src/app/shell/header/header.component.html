@@ -1,0 +1,25 @@
+<header>
+  <a routerLink="/">project</a>
+  <nav>
+    @for (menuItem of menuItems; track $index) {
+      <a
+        [routerLink]="menuItem.path"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >{{ menuItem.title }}</a
+      >
+    }
+  </nav>
+  <a routerLink="/contact">Get in touch</a>
+  @if (darkModeFeatureEnabled) {
+    <div>
+      <button mat-mini-fab color="accent" (click)="darkMode.set(!darkMode())">
+        @if (darkMode()) {
+          <mat-icon>light_mode</mat-icon>
+        } @else {
+          <mat-icon>dark_mode</mat-icon>
+        }
+      </button>
+    </div>
+  }
+</header>
