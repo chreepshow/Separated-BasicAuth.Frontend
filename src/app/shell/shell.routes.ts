@@ -1,6 +1,8 @@
 import { Route } from '@angular/router';
 import { ShellComponent } from './shell/shell.component';
 import { WeatherForecastComponent } from '@app/weather-forecast/weather-forecast.component';
+import { LoginComponent } from '@app/login/login.component';
+import { SignUpComponent } from '@app/sign-up/sign-up.component';
 
 export const shellRoutes: Route[] = [
   {
@@ -12,6 +14,14 @@ export const shellRoutes: Route[] = [
         path: 'weather',
         title: $localize`:@@WEATHER__TITLE:Weather page`,
         component: WeatherForecastComponent,
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'signup',
+        component: SignUpComponent,
       },
     ],
   },
