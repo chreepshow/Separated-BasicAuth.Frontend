@@ -4,12 +4,12 @@
       <th>Date</th>
       <th>Temperature C</th>
       <th>Temperature F</th>
-      <th>summary</th>
+      <th i18n>summary</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let weatherForecast of weatherForecasts">
-      <td>{{ weatherForecast.date | date: 'short' }}</td>
+      <td>{{ weatherForecast.date | date : "short" }}</td>
       <td>{{ weatherForecast.temperatureC }}</td>
       <td>{{ weatherForecast.temperatureF }}</td>
       <td>{{ weatherForecast.summary }}</td>
