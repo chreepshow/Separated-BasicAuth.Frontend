@@ -13,7 +13,11 @@ export const publicMenuItems: MenuItem[] = [
 
 export const privateMenuItems: MenuItem[] = [
   {
-    title: $localize`:@@MENU_ITEM_TITLE__ABOUT:Weather`,
+    title: $localize`:@@MENU_ITEM_TITLE__BROWSE:Browse`,
+    path: '/home',
+  },
+  {
+    title: $localize`:@@MENU_ITEM_TITLE__WEATHER:Weather`,
     path: '/weather',
   },
 ];

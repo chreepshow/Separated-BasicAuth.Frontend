@@ -1,7 +1,10 @@
 <app-header class="bg-lightblue1"></app-header>
-
-<h1 i18n="@@SHELL__HEADER">Hello world!</h1>
-
-<router-outlet />
+<main class="shell-main-container">
+  @if (loggedIn()) {
+    <router-outlet />
+  } @else {
+    <app-landing></app-landing>
+  }
+</main>
 
 <app-footer></app-footer>
