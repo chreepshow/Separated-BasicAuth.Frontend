@@ -1,8 +1,8 @@
 import { Route } from '@angular/router';
 import { ShellComponent } from './shell/shell.component';
 import { WeatherForecastComponent } from '@app/weather-forecast/weather-forecast.component';
-import { LoginComponent } from '@app/login/login.component';
-import { SignUpComponent } from '@app/sign-up/sign-up.component';
+import { LoginComponent } from '@app/@core/auth/login/login.component';
+import { SignUpComponent } from '@app/@core/auth/sign-up/sign-up.component';
 import { HomeComponent } from '@app/home/home.component';
 
 export const shellRoutes: Route[] = [
