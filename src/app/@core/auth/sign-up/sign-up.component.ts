@@ -1,15 +1,12 @@
 import { Component, inject } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { SignUpService } from './sign-up.service';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+
+import { SignUpService } from './sign-up.service';
+import { SnackBarService } from '@app/@shared/services/snack-bar.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -27,12 +24,14 @@ import { RouterModule } from '@angular/router';
 })
 export class SignUpComponent {
   fb = inject(FormBuilder);
+  signUpService = inject(SignUpService);
+  snackBarService = inject(SnackBarService);
+  router = inject(Router);
+
   signUpForm = this.fb.nonNullable.group({
     email: ['', Validators.required],
     password: ['', Validators.required],
   });
-
-  constructor(private signUpService: SignUpService) {}
 
   onSubmit(): void {
     if (this.signUpForm.valid) {
@@ -41,7 +40,12 @@ export class SignUpComponent {
           email: this.signUpForm.value.email!,
           password: this.signUpForm.value.password!,
         })
-        .subscribe((response) => console.log(response));
+        .subscribe(() => {
+          this.snackBarService.openSnackBar(
+            $localize`:@@SIGN_UP_SUCCESS__SNACK_MSG:Account successfully created!`,
+          );
+          this.router.navigate(['/login']);
+        });
     }
   }
 }

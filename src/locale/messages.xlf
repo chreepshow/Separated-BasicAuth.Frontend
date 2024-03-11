@@ -30,6 +30,13 @@
           <context context-type="linenumber">26,28</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="SIGN_UP_SUCCESS__SNACK_MSG" datatype="html">
+        <source>Account successfully created!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/@core/auth/sign-up/sign-up.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="MENU_ITEM_TITLE__LOG_IN" datatype="html">
         <source>Login</source>
         <context-group purpose="location">
@@ -56,6 +63,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/@shared/components/header-container/consts/menu-items.ts</context>
           <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SNACK_BAR_SERVICE__CLOSE" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/@shared/services/snack-bar.service.ts</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="LANDING__TITLE" datatype="html">
