@@ -12,5 +12,5 @@ import { LandingComponent } from '../../landing/landing.component';
   imports: [RouterOutlet, HeaderComponent, FooterComponent, LandingComponent],
 })
 export class ShellComponent {
-  loggedIn = signal<boolean>(false);
+  loggedIn = signal<boolean>(true);
 }
