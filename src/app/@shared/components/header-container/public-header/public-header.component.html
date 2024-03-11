@@ -1,0 +1,14 @@
+<nav class="public-header-nav">
+  <a mat-button routerLink="/">project</a>
+  <span class="public-header-nav-spacer"></span>
+
+  @for (menuItem of menuItems; track $index) {
+    <a
+      mat-button
+      [routerLink]="menuItem.path"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >{{ menuItem.title }}</a
+    >
+  }
+</nav>

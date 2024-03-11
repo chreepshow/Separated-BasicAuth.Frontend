@@ -1,4 +1,4 @@
-import { MenuItem } from './models/menu-item';
+import { MenuItem } from '@app/@shared/components/header-container/models/menu-item';
 
 export const publicMenuItems: MenuItem[] = [
   {

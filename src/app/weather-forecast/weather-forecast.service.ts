@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { WeatherForecast } from '@app/models/weather-forecast/weather-forecast';
+import { WeatherForecast } from '@app/weather-forecast/models/weather-forecast';
 import { environment } from '@env/environment';
 
 @Injectable({

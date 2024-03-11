@@ -1,27 +1,29 @@
-import { UpperCasePipe } from '@angular/common';
 import { Component, HostBinding, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { privateMenuItems, publicMenuItems } from './menu-items';
-import { darkModeEnabled } from './menu-features';
+import { privateMenuItems, publicMenuItems } from './consts/menu-items';
+import { darkModeEnabled } from './consts/menu-features';
+import { PublicHeaderComponent } from './public-header/public-header.component';
+import { PrivateHeaderComponent } from './private-header/private-header.component';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-header-container',
   standalone: true,
+  templateUrl: './header-container.component.html',
+  styleUrl: './header-container.component.scss',
   imports: [
+    PublicHeaderComponent,
+    PrivateHeaderComponent,
     RouterModule,
-    UpperCasePipe,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
   ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderContainerComponent {
   privateMenuItems = privateMenuItems;
   publicMenuItems = publicMenuItems;
   darkModeFeatureEnabled = darkModeEnabled;

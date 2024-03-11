@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 
-import { WeatherForecast } from '@app/models/weather-forecast/weather-forecast';
+import { WeatherForecast } from '@app/weather-forecast/models/weather-forecast';
 import { WeatherForecastService } from './weather-forecast.service';
 
 @Component({

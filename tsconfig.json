@@ -5,7 +5,11 @@
     "baseUrl": "src",
     "paths": {
       "@app/*": ["app/*"],
-      "@env/*": ["environments/*"]
+      "@env/*": ["environments/*"],
+      "@core": ["app/@core"],
+      "@core/*": ["app/@core/*"],
+      "@shared": ["app/@shared"],
+      "@shared/*": ["app/@shared/*"],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

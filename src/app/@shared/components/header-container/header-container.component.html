@@ -1,24 +1,11 @@
 <header>
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <a mat-button routerLink="/">project</a>
-      <span class="example-spacer"></span>
-
-      <nav>
-        @for (
-          menuItem of loggedIn() ? privateMenuItems : publicMenuItems;
-          track $index
-        ) {
-          <a
-            mat-button
-            [routerLink]="menuItem.path"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            >{{ menuItem.title }}</a
-          >
-        }
-      </nav>
-
+      @if (loggedIn()) {
+        <app-private-header [menuItems]="privateMenuItems"></app-private-header>
+      } @else {
+        <app-public-header [menuItems]="publicMenuItems"></app-public-header>
+      }
       @if (darkModeFeatureEnabled) {
         <div>
           <button
