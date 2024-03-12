@@ -1,1 +1,28 @@
-<p>login works!</p>
+<form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label i18n="@@LOGIN_FORM__EMAIL_LABEL">Email</mat-label>
+    <input matInput formControlName="email" placeholder="Enter your email" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label i18n="@@LOGIN_FORM__PASSWORD_LABEL">Password</mat-label>
+    <input
+      matInput
+      type="password"
+      formControlName="password"
+      placeholder="Enter your password"
+    />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    i18n="@@LOGIN_FORM__LOGIN_BUTTON"
+  >
+    Login
+  </button>
+  <p i18n="@@LOGIN_FORM__NONEXISTING_ACCOUNT_MSG">
+    Don't have an account? <a [routerLink]="'/signup'">Create one!</a>
+  </p>
+</form>

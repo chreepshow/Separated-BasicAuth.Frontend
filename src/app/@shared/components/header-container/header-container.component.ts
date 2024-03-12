@@ -1,4 +1,4 @@
-import { Component, HostBinding, signal } from '@angular/core';
+import { Component, HostBinding, inject, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,6 +8,7 @@ import { privateMenuItems, publicMenuItems } from './consts/menu-items';
 import { darkModeEnabled } from './consts/menu-features';
 import { PublicHeaderComponent } from './public-header/public-header.component';
 import { PrivateHeaderComponent } from './private-header/private-header.component';
+import { AuthService } from '@app/@core/auth/auth.service';
 
 @Component({
   selector: 'app-header-container',
@@ -29,6 +30,7 @@ export class HeaderContainerComponent {
   darkModeFeatureEnabled = darkModeEnabled;
   darkMode = signal<boolean>(false);
   loggedIn = signal<boolean>(false);
+  authService = inject(AuthService);
 
   @HostBinding('class.dark') get mode() {
     return this.darkMode();

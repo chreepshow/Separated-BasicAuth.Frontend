@@ -1,10 +1,12 @@
-import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, Input, inject, input } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MenuItem } from '@shared/components/header-container/models/menu-item';
+import { UserModel } from '@app/@core/auth/models/user-model';
+import { AuthService } from '@app/@core/auth/auth.service';
 
 @Component({
   selector: 'app-private-header',
@@ -15,4 +17,12 @@ import { MenuItem } from '@shared/components/header-container/models/menu-item';
 })
 export class PrivateHeaderComponent {
   @Input({ required: true }) menuItems!: MenuItem[];
+  authService = inject(AuthService);
+  router = inject(Router);
+
+  onLogout() {
+    this.authService.removeUserFromLocalStorage();
+    this.authService.currentUserSig.set(null);
+    this.router.navigate(['/']);
+  }
 }

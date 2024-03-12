@@ -2,6 +2,7 @@
   <a mat-button routerLink="/home">Home</a>
   <span class="private-header-nav-spacer"></span>
 
+  <span>{{ authService.currentUserSig()?.email }}</span>
   @for (menuItem of menuItems; track $index) {
     <a
       mat-button
@@ -11,4 +12,5 @@
       >{{ menuItem.title }}</a
     >
   }
+  <button mat-raised-button (click)="onLogout()">Logout</button>
 </nav>

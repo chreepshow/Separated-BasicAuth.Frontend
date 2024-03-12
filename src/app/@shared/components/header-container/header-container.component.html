@@ -1,10 +1,10 @@
 <header>
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      @if (loggedIn()) {
-        <app-private-header [menuItems]="privateMenuItems"></app-private-header>
-      } @else {
+      @if (authService.currentUserSig() == null) {
         <app-public-header [menuItems]="publicMenuItems"></app-public-header>
+      } @else {
+        <app-private-header [menuItems]="privateMenuItems"></app-private-header>
       }
       @if (darkModeFeatureEnabled) {
         <div>
